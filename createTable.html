@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<head>
+	<style type="text/css">
+		table,th,td{
+			border-collapse: collapse;
+			border:solid black 2px;
+			padding: 1px;
+		}
+	</style>
+
+	<script>
+
+	
+	var numOfColumns =  7;
+	var numOfRows = 6;
+	var cellNum = 0;
+	var idName = "cell";
+	function createTable() {
+		for(var i=0;i<numOfRows;i++){
+			var tr = document.createElement("tr");
+    		var t = document.createTextNode("");
+    		tr.appendChild(t);
+    		document.getElementById("myTable").appendChild(tr);
+    		for(var x=0;x<numOfColumns;x++){
+    			cellNum ++;
+				var td = document.createElement("td");
+				td.setAttribute("id", idName);
+    			var t = document.createTextNode(cellNum);
+    			td.appendChild(t);
+    			document.getElementById("myTable").appendChild(td); 
+			};
+		};
+	};
+
+
+	</script>
+<div class="cell" id="cell0" style="background-color: white;"></div>
+</head>
+<p>HERE IS SOME TEXT</p>
+<body onload="createTable()">
+<table id="myTable">
+</table>
+
+
+</table>
+</body>

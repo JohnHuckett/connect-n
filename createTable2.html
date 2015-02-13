@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<head>
+	<style type="text/css">
+		table,th,td{
+			border-collapse: collapse;
+			border:solid black 2px;
+			padding: 1px;
+		}
+		td{
+			width:10px;
+			height:10px;
+		}
+	</style>
+
+	<script>
+
+	
+	var gridWidth =  7;
+	var gridHeight = 6;
+	
+	var cellCount = 0;
+	var tableRow = "tableRow";
+	var tableCell = "tableCell";
+	var outerDiv = "shell";
+	var innerDiv = "cell";
+
+	function createTable() {
+
+		for(var x=0;x<gridHeight;x++){
+
+		var tr = document.createElement("tr");
+    	var text = document.createTextNode("");
+    	tr.setAttribute("id", tableRow+[x]);
+    	tr.appendChild(text);
+    	document.getElementById("mainTable").appendChild(tr);
+
+    		for(var i=0;i<gridWidth;i++){
+
+    			var td = document.createElement("td");
+    			var text = document.createTextNode("");
+    			td.setAttribute("id", tableCell+[cellCount]);
+    			td.appendChild(text);
+    			document.getElementById(tableRow+[x]).appendChild(td);
+
+    			var div = document.createElement("div");
+    			var text = document.createTextNode("");
+    			div.setAttribute("id", outerDiv+[cellCount]);
+    			div.appendChild(text);
+    			document.getElementById(tableCell+[cellCount]).appendChild(div);
+
+    			var div = document.createElement("div");
+    			var text = document.createTextNode("");
+    			div.setAttribute("class","cell");
+    			div.setAttribute("id", innerDiv+[cellCount]);
+    			div.appendChild(text);
+    			document.getElementById(outerDiv+[cellCount]).appendChild(div);
+    			
+
+ 				cellCount ++;
+    		};
+		};
+			
+	};
+
+
+	</script>
+<div class="cell" id="cell0" style="background-color: white;"></div>
+</head>
+<p>HERE IS SOME TEXT</p>
+<body onload="createTable()">
+<table id="mainTable">
+</table>
+
+
+</table>
+</body>

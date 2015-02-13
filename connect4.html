@@ -1,0 +1,27 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="connect4.css">
+	<script type="text/javascript" src="animation.js"></script>
+	<script type="text/javascript" src="connect4.js"></script>
+</head>
+<body onload="createMainTable(mainTableId,6,7)" onload="displayCells()" onload="newGame()">
+
+	<div id="title" style="color:blue; ">CONNECT n</div>
+		
+	<div class="button" id="newGameButton" onclick="newGame()">NEW GAME</div>
+	<div id="andTheWinneris"></div>
+			
+	<table id="showTable" >
+		<tr>
+			<td onmousedown=dropDisc(1) onmouseover=showDisc("column1") onmouseout=unshowDisc("column1")><div class="shell"><div class="showDisc" id="column1" ></div></div></td>
+			<td onmousedown=dropDisc(2) onmouseover=showDisc("column2") onmouseout=unshowDisc("column2")><div class="shell"><div class="showDisc" id="column2"></div></div></td>
+			<td onmousedown=dropDisc(3) onmouseover=showDisc("column3") onmouseout=unshowDisc("column3")><div class="shell"><div class="showDisc" id="column3"></div></div></td>
+			<td onmousedown=dropDisc(4) onmouseover=showDisc("column4") onmouseout=unshowDisc("column4")><div class="shell"><div class="showDisc" id="column4"></div></div></td>
+			<td onmousedown=dropDisc(5) onmouseover=showDisc("column5") onmouseout=unshowDisc("column5")><div class="shell"><div class="showDisc" id="column5"></div></div></td>
+			<td onmousedown=dropDisc(6) onmouseover=showDisc("column6") onmouseout=unshowDisc("column6")><div class="shell"><div class="showDisc" id="column6"></div></div></td>
+			<td onmousedown=dropDisc(7) onmouseover=showDisc("column7") onmouseout=unshowDisc("column7")><div class="shell"><div class="showDisc" id="column7"></div></div></td>
+		</tr>
+	</table>
+	<table id="mainTable"></table><br>
+</body>
+</html>
